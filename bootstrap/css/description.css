@@ -1,0 +1,47 @@
+#header {
+    background:#2f5256;
+    width:100%;
+    height:50px;
+    top:0;
+    margin: 0;
+    position:absolute;
+    left: 0;
+}
+
+#footer {
+    background:#2f5256;
+    width:100%;
+    height:140px;
+    position:absolute;
+    bottom:0;
+    margin: 0;
+}
+
+.title-label{
+    position: absolute;
+    margin: auto;
+    color: white;
+    font-size: 19px;
+    font-color: white;
+    display: inline-block;
+    vertical-align: middle;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.container-margin{
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+}
+
