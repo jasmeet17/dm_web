@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/description.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Delius+Unicase" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="bootstrap/js/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+
+    <title>News Classifier</title>
+
+</head>
+<body>
+
+<div class="container-fluid">
+
+    <div class="row" id="header">
+        <div class="col-md-12">
+            <label id="logo-text">News Classifier</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <!--Left pane of the window-->
+        <div class="col-md-3">
+        </div>
+
+        <!--Middle pane of the window-->
+        <div class="col-md-6" id="right_side_window">
+            <div class="row" id="text_title_right">
+                <label>Classified News</label>
+            </div>
+            <div class="row">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>News Article</th>
+                            <th>Classified</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for item in items%}
+                        <tr>
+                            <th scope="row">{{item.number}}</th>
+
+                            <td><a href="{{item.url}}" target="_blank">{{item.title}}</a></td>
+                            <td>{{item.classified}}</td>
+
+                        </tr>
+                        {% endfor %}
+                  </tbody>
+                </table>
+            </div>
+            <div class="row" id="button-to-classify">
+                <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">Classify your news</button>
+            </div>
+        </div>
+
+        <!--Right pane of the window-->
+        <div class="col-md-3">
+        </div>
+
+
+    </div>
+
+    <div class="row" id="footer">
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Results</h4>
+            </div>
+            <div class="modal-body">
+                <p>Yes. News is not voilent.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+</body>
+</html>
+
